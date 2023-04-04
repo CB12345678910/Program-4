@@ -2,44 +2,41 @@
 Author Name: Conner Bare
 Course: COP 2334
 Software: Repl.it C++ IDE
-Summary: This program will accept an value, output a few calculations using this value, and then ask for a new value. This will repeat until -1 is entered. 
-Interesting Quirks: Inputting zero glitches out the x / x calculation, due to the inability to divide by zero. Entering a letter causes a repeating output glitch.
+Summary: This program will accept an integer from the user, and then output the ordinal number form of all the numbers from one to the entered value, followed by Hello. 
 */
 #include <iostream>
 using namespace std;
 
 int main()
 {
-  int counter = 0;
-  double userInput;
-  double calcOne;
-  double calcTwo;
-  double calcThree;
-  double calcFour;
+  int userInput;
 
-  cout << "Please enter as number: ";
+  cout << "Please enter the stopping point: ";
   cin >> userInput;
   
-   while(userInput != -1)  {
-    calcOne = userInput * userInput;
-    calcTwo = userInput / userInput;
-    calcThree = (userInput + 3) / 5;
-    calcFour = calcThree + ((userInput + 7) / 2);
-
-    cout << "x = " << userInput << endl;
-    cout << "x * x = " << calcOne << endl;
-    cout << "x / x = " << calcTwo << endl; 
-    cout << "(x + 3) / 5 = " << calcThree << endl;
-    cout << "((x + 3) / 5) + ((x+7) / 2) = " << calcFour << endl;
-    
-    counter = counter + 1;
-
-     cout << "Please enter another number: ";
-     cin >> userInput;
-    
+   for(int i = 1 ; i < userInput + 1 ; i++) {
+   
+   cout << i;
+   
+   if(i < 21 && i > 3)
+      cout << "th";
+   else {
+      if(i % 10 == 2 || i % 10 == 0.8) {
+         cout << "nd";
+      }  
+      else if(i % 10 == 3 || i % 10 == 0.7) {
+         cout << "rd";
+      }
+      else if(i % 10 == 1 || i % 10 == 0.9) {
+         cout << "st";
+      }
+      else {
+         cout << "th";
+      }  
    }
-
-   cout << endl << "Count: " << counter;
+   
+   cout << " Hello\n";
+   }
    
    return 0;
 } 
